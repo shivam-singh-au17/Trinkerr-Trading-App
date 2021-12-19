@@ -73,7 +73,7 @@ const OneSearchItem = (props) => {
           </b>
           <span>{props.el.stockName.split("::")[1]}</span>
         </td>
-        <td className="searchTdBtn">
+        <td className="pt-3">
           <button
             className="btn btn-success"
             onClick={() => handleAddStock(props.el)}
