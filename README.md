@@ -30,14 +30,21 @@ npm start
 
 # Some screenshots of our project
 
-#### This is the first view of my assignment where you can see all the stocks added by the user.
+#### 1. This is the first view of my assignment where you can see all the stocks added by the user.
 ![Screenshot (286)](https://github.com/shivam-singh-au17/Trinkerr-Trading-App/blob/master/Screenshot/Screenshot%20(286).png?raw=true)
 ![Screenshot (287)](https://github.com/shivam-singh-au17/Trinkerr-Trading-App/blob/master/Screenshot/Screenshot%20(287).png?raw=true)
 
-
-#### And in this photo, the result of the stocks the user is searching for can be seen.
+#### 2. And in this photo, the result of the stocks the user is searching for can be seen.
 ![Screenshot (288)](https://github.com/shivam-singh-au17/Trinkerr-Trading-App/blob/master/Screenshot/Screenshot%20(288).png?raw=true)
 
+#### 3. And in this photo, the result of the stocks the user is searching for can be seen.
+![Screenshot (289)](https://github.com/shivam-singh-au17/Trinkerr-Trading-App/blob/master/Screenshot/Screenshot%20(289).png?raw=true)
+
+#### 4. And in this photo, the result of the stocks the user is searching for can be seen.
+![Screenshot (290)](https://github.com/shivam-singh-au17/Trinkerr-Trading-App/blob/master/Screenshot/Screenshot%20(290).png?raw=true)
+
+#### 5. And in this photo, the result of the stocks the user is searching for can be seen.
+![Screenshot (291)](https://github.com/shivam-singh-au17/Trinkerr-Trading-App/blob/master/Screenshot/Screenshot%20(291).png?raw=true)
 
 ***So this was the TRINKERR assignment I have created with my efforts. I have added the screenshots for our audience to understand easily.***
 
