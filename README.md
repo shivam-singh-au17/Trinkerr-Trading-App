@@ -37,13 +37,13 @@ npm start
 #### 2. And in this photo, the result of the stocks the user is searching for can be seen.
 ![Screenshot (288)](https://github.com/shivam-singh-au17/Trinkerr-Trading-App/blob/master/Screenshot/Screenshot%20(288).png?raw=true)
 
-#### 3. And in this photo, the result of the stocks the user is searching for can be seen.
+#### 3. The user can delete the added stocks here, the stock on which he hovers, a delete button appears on it, on clicking it, it gets deleted and buttons are also visible to shorten it here.
 ![Screenshot (289)](https://github.com/shivam-singh-au17/Trinkerr-Trading-App/blob/master/Screenshot/Screenshot%20(289).png?raw=true)
 
-#### 4. And in this photo, the result of the stocks the user is searching for can be seen.
+#### 4. If the user searches for a stock which he has already added to the watch list, he sees the delete button instead of the add button there.
 ![Screenshot (290)](https://github.com/shivam-singh-au17/Trinkerr-Trading-App/blob/master/Screenshot/Screenshot%20(290).png?raw=true)
 
-#### 5. And in this photo, the result of the stocks the user is searching for can be seen.
+#### 5. When the user hovers over one of the stocks added to the watch list, a delete button appears there too, by clicking on which the user can delete that stock.
 ![Screenshot (291)](https://github.com/shivam-singh-au17/Trinkerr-Trading-App/blob/master/Screenshot/Screenshot%20(291).png?raw=true)
 
 ***So this was the TRINKERR assignment I have created with my efforts. I have added the screenshots for our audience to understand easily.***
