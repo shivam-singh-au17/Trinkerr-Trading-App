@@ -69,6 +69,32 @@ const SearchBar = () => {
     alert("Successfully deleted stock ...");
   };
 
+  const handlePriseUp = () => {
+    taskData.sort((a, b) => {
+      return a.stockPrise - b.stockPrise;
+    });
+    setTaskData([...taskData]);
+  };
+
+  const handlePriseDown = () => {
+    taskData.sort((a, b) => {
+      return b.stockPrise - a.stockPrise;
+    });
+    setTaskData([...taskData]);
+  };
+  const handleNSEUp = () => {
+    taskData.sort((a, b) => {
+      return a.stockNSE - b.stockNSE;
+    });
+    setTaskData([...taskData]);
+  };
+  const handleNSEDown = () => {
+    taskData.sort((a, b) => {
+      return b.stockNSE - a.stockNSE;
+    });
+    setTaskData([...taskData]);
+  };
+
   return (
     <div className="container mt-5">
       <div className="mainContainer">
@@ -241,22 +267,36 @@ const SearchBar = () => {
           </p>
           <div className="allSortBtn mb-5">
             <div>
-              <button className="btn btn-outline-info me-2">
+              <button
+                className="btn btn-outline-info me-2"
+                onClick={handlePriseDown}
+              >
                 Prise <i className="fa fa-arrow-up ms-2" aria-hidden="true"></i>
               </button>
-              <button className="btn btn-outline-danger me-2">
-                Prise <i className="fa fa-arrow-down ms-2" aria-hidden="true"></i>
+              <button
+                className="btn btn-outline-danger me-2"
+                onClick={handlePriseUp}
+              >
+                Prise{" "}
+                <i className="fa fa-arrow-down ms-2" aria-hidden="true"></i>
               </button>
             </div>
             <h3 className="">
-              <i className="fa fa-long-arrow-left me-3" aria-hidden="true"></i>SORT
+              <i className="fa fa-long-arrow-left me-3" aria-hidden="true"></i>
+              SORT
               <i className="fa fa-long-arrow-right ms-3" aria-hidden="true"></i>
             </h3>
             <div>
-              <button className="btn btn-outline-info me-2">
+              <button
+                className="btn btn-outline-info me-2"
+                onClick={handleNSEUp}
+              >
                 NSE <i className="fa fa-arrow-up ms-2" aria-hidden="true"></i>
               </button>
-              <button className="btn btn-outline-danger me-2">
+              <button
+                className="btn btn-outline-danger me-2"
+                onClick={handleNSEDown}
+              >
                 NSE <i className="fa fa-arrow-down ms-2" aria-hidden="true"></i>
               </button>
             </div>

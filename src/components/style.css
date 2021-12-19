@@ -1,3 +1,5 @@
+/* SEARCH BAR */
+
 body {
   max-width: 100%;
 }
@@ -107,9 +109,15 @@ body {
   box-shadow: -2px 2px 20px 5px rgba(32, 33, 36, 0.28);
 }
 
+
+/* NAVBAR */
+
 .navBarMy{
   box-shadow: -2px 2px 20px 5px rgba(32, 33, 36, 0.28);
 }
+
+
+/* SORT BTNS */
 
 .allSortBtn{
   display: flex;
