@@ -1,9 +1,10 @@
-import Home from "./Home";
+import SearchBar from "./components/SearchBar";
+import "./App.css";
 
 function App() {
   return (
     <div>
-      <Home />
+      <SearchBar />
     </div>
   );
 }

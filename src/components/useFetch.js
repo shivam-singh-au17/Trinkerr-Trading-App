@@ -13,8 +13,7 @@ export const useFetch = (url) => {
         setError(false);
         axios.get(url)
             .then((res) => {
-                setData(res.data);
-                console.log(res.data);
+                setData(res.data.data);
                 setLoading(false);
             })
             .catch((err) => {
@@ -28,7 +27,7 @@ export const useFetch = (url) => {
         setLoading(true);
         timeRef.current = setTimeout(() => {
             fetchData(url);
-        }, 1000);
+        }, 100);
     }, [url]);
 
     return { loading, error, data };

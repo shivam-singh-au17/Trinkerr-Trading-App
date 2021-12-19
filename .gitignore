@@ -21,3 +21,12 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+
+# mongodb+srv://Shivammz20:Shivam@mz20@cluster0.sbfcp.mongodb.net/trinkerrApp?retryWrites=true&w=majority
+
+
+# mongoimport --uri mongodb+srv://Shivammz20:Shivam@mz20@cluster0.sbfcp.mongodb.net/trinkerrApp --collection myApp --type json --file dataone.json --jsonArray
+
+# mongoimport --uri mongodb+srv://Hardik:<password>@cluster0.saqgp.mongodb.net/Shoppersstop --collection test --type json --file data.json --jsonArray
+
