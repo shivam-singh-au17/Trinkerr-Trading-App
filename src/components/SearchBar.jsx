@@ -105,7 +105,7 @@ const SearchBar = () => {
         <div className="my-5 bglight">
           <p className="text-center fs-1">
             <b>
-              <u>All Stocks</u>
+              <u>Watch-List</u>
             </b>
           </p>
           <div className="allSortBtn mb-5">
@@ -114,13 +114,13 @@ const SearchBar = () => {
                 className="btn btn-outline-info me-2"
                 onClick={handlePriseDown}
               >
-                Prise <i className="fa fa-arrow-up ms-2" aria-hidden="true"></i>
+                Price <i className="fa fa-arrow-up ms-2" aria-hidden="true"></i>
               </button>
               <button
                 className="btn btn-outline-danger me-2"
                 onClick={handlePriseUp}
               >
-                Prise{" "}
+                Price{" "}
                 <i className="fa fa-arrow-down ms-2" aria-hidden="true"></i>
               </button>
             </div>
