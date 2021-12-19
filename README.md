@@ -43,7 +43,7 @@ npm start
 #### 4. If the user searches for a stock which he has already added to the watch list, he sees the delete button instead of the add button there.
 ![Screenshot (290)](https://github.com/shivam-singh-au17/Trinkerr-Trading-App/blob/master/Screenshot/Screenshot%20(290).png?raw=true)
 
-#### 5. When the user hovers over one of the stocks added to the watch list, a delete button appears there too, by clicking on which the user can delete that stock.
+#### 5. If the user searches for a stock that is not included in his watch list, he sees an add button when he hovers that stock.
 ![Screenshot (291)](https://github.com/shivam-singh-au17/Trinkerr-Trading-App/blob/master/Screenshot/Screenshot%20(291).png?raw=true)
 
 ***So this was the TRINKERR assignment I have created with my efforts. I have added the screenshots for our audience to understand easily.***
