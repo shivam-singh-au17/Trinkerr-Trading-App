@@ -30,16 +30,13 @@ npm start
 
 # Some screenshots of our project
 
-#### 1. This is the home page of the site created by us at Hackathon where you can fill in all the details related to our website.
-![Screenshot (222)](https://github.com/shivam-singh-au17/hackathon_App/blob/master/Screenshots/Screenshot%20(222).png?raw=true)
+#### This is the first view of my assignment where you can see all the stocks added by the user.
+![Screenshot (286)](https://github.com/shivam-singh-au17/Trinkerr-Trading-App/blob/master/Screenshot/Screenshot%20(286).png?raw=true)
+![Screenshot (287)](https://github.com/shivam-singh-au17/Trinkerr-Trading-App/blob/master/Screenshot/Screenshot%20(287).png?raw=true)
 
 
-#### 2. This is the help box where you can know the answers to all your questions and you can also write here by speaking.
-![Screenshot (223)](https://github.com/shivam-singh-au17/hackathon_App/blob/master/Screenshots/Screenshot%20(223).png?raw=true)
-
-
-#### 3. If you want to join with us then you can join us by filling in your details here and we will show your courier details on our website.
-![Screenshot (224)](https://github.com/shivam-singh-au17/hackathon_App/blob/master/Screenshots/Screenshot%20(224).png?raw=true)
+#### And in this photo, the result of the stocks the user is searching for can be seen.
+![Screenshot (288)](https://github.com/shivam-singh-au17/Trinkerr-Trading-App/blob/master/Screenshot/Screenshot%20(288).png?raw=true)
 
 
 ***So this was the TRINKERR assignment I have created with my efforts. I have added the screenshots for our audience to understand easily.***
