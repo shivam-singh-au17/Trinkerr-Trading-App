@@ -1,27 +1,55 @@
 import axios from "axios";
 import React, { useState } from "react";
 
-const WatchList = (props) => {
-  const [styleBtn, setStyleBtn] = useState(false);
+const OneSearchItem = (props) => {
+  const [styleBtn, setStyleBtn] = useState(null);
+  const [styleBtnDel, setStyleBtnDel] = useState(null);
 
-  const handleDelete = (id) => {
+  const handleAddStock = (item) => {
+    const jsonData = {
+      mainId: item._id,
+      stockName: item.stockName,
+      stockPrise: item.stockPrise,
+      stockNSE: item.stockNSE,
+    };
     axios
-      .delete(`https://instagramclonedata.herokuapp.com/watchList/${id}`)
+      .post("https://instagramclonedata.herokuapp.com/watchList/", jsonData)
+      .then(() => {
+        props.fetchData();
+      });
+    alert("Successfully added stock ...");
+  };
+
+  const handleDeleteAdded = (id) => {
+    const addedDelete = props.taskData.filter((item) => {
+      return item.mainId === id ? item._id : "";
+    });
+    axios
+      .delete(
+        `https://instagramclonedata.herokuapp.com/watchList/${addedDelete[0]._id}`
+      )
       .then(() => {
         props.fetchData();
       });
     alert("Successfully deleted stock ...");
   };
+
   return (
     <>
       <tr
         key={props.el._id}
         className="searchSpace"
         onMouseEnter={(e) => {
-          setStyleBtn(true);
+          // setStyleBtn(true);
+          props.taskData.map((item) => {
+            return item.mainId === props.el._id
+              ? setStyleBtnDel(true) || setStyleBtn(false)
+              : setStyleBtn(true);
+          });
         }}
         onMouseLeave={(e) => {
           setStyleBtn(false);
+          setStyleBtnDel(false);
         }}
       >
         <td className="searchTd">
@@ -42,13 +70,25 @@ const WatchList = (props) => {
           </b>
           <span>{props.el.stockName.split("::")[1]}</span>
         </td>
-        <td>
+        <td className="searchTdBtn">
           <button
+            className="btn btn-success"
+            onClick={() => handleAddStock(props.el)}
+            data-bs-toggle="tooltip"
+            data-bs-placement="right"
+            title="Click here to add"
             style={
               styleBtn === true ? { display: "block" } : { display: "none" }
             }
-            className="btn btn-danger mt-2"
-            onClick={() => handleDelete(props.el._id)}
+          >
+            <i className="fa fa-plus-square" aria-hidden="true"></i>
+          </button>
+          <button
+            style={
+              styleBtnDel === true ? { display: "block" } : { display: "none" }
+            }
+            className="btn btn-danger"
+            onClick={() => handleDeleteAdded(props.el._id)}
             data-bs-toggle="tooltip"
             data-bs-placement="right"
             title="Click here to delete"
@@ -113,4 +153,4 @@ const WatchList = (props) => {
   );
 };
 
-export default WatchList;
+export default OneSearchItem;

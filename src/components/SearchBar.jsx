@@ -2,13 +2,13 @@ import "./style.css";
 import React, { useEffect, useState } from "react";
 import { useFetch } from "./useFetch";
 import axios from "axios";
+import OneSearchItem from "./OneSearchItem";
+import WatchList from "./WatchList";
 
 const SearchBar = () => {
   const [queryFrom, setQueryFrom] = useState("");
   const [from, setFrom] = useState("");
   const [taskData, setTaskData] = useState([]);
-  const [styleBtn, setStyleBtn] = useState(false);
-  const [styleBtnDel, setStyleBtnDel] = useState(false);
 
   const fetchData = () => {
     axios
@@ -31,43 +31,6 @@ const SearchBar = () => {
     setFrom(e.target.value);
   };
 
-  const handleAddStock = (item) => {
-    const jsonData = {
-      mainId: item._id,
-      stockName: item.stockName,
-      stockPrise: item.stockPrise,
-      stockNSE: item.stockNSE,
-    };
-    axios
-      .post("https://instagramclonedata.herokuapp.com/watchList/", jsonData)
-      .then(() => {
-        fetchData();
-      });
-    alert("Successfully added stock ...");
-  };
-
-  const handleDelete = (id) => {
-    axios
-      .delete(`https://instagramclonedata.herokuapp.com/watchList/${id}`)
-      .then(() => {
-        fetchData();
-      });
-    alert("Successfully deleted stock ...");
-  };
-
-  const handleDeleteAdded = (id) => {
-    const addedDelete = taskData.filter((item) => {
-      return item.mainId === id ? item._id : "";
-    });
-    axios
-      .delete(
-        `https://instagramclonedata.herokuapp.com/watchList/${addedDelete[0]._id}`
-      )
-      .then(() => {
-        fetchData();
-      });
-    alert("Successfully deleted stock ...");
-  };
 
   const handlePriseUp = () => {
     taskData.sort((a, b) => {
@@ -127,131 +90,11 @@ const SearchBar = () => {
                 <tbody>
                   {data
                     ? data.map((el) => (
-                        <tr
-                          key={el._id}
-                          className="searchSpace"
-                          onMouseEnter={(e) => {
-                            setStyleBtn(true);
-                            taskData.map((item) => {
-                              return item.mainId === el._id
-                                ? setStyleBtnDel(true)
-                                : setStyleBtnDel(false);
-                            });
-                          }}
-                          onMouseLeave={(e) => {
-                            setStyleBtn(false);
-                          }}
-                        >
-                          <td className="searchTd">
-                            <b>
-                              {(
-                                100 -
-                                ((el.stockPrise - el.stockNSE / el.stockNSE) /
-                                  el.stockPrise) *
-                                  100
-                              ).toFixed(2) >= 1 ? (
-                                <b className="text-info">
-                                  {" "}
-                                  {el.stockName.split("::")[0]}
-                                </b>
-                              ) : (
-                                <b className="text-danger">
-                                  {" "}
-                                  {el.stockName.split("::")[0]}
-                                </b>
-                              )}
-                            </b>
-                            <span>{el.stockName.split("::")[1]}</span>
-                          </td>
-                          <td className="searchTdBtn">
-                            <button
-                              className="btn btn-success"
-                              onClick={() => handleAddStock(el)}
-                              data-bs-toggle="tooltip"
-                              data-bs-placement="right"
-                              title="Click here to add"
-                              style={
-                                styleBtn === true
-                                  ? { display: "block" }
-                                  : { display: "none" }
-                              }
-                            >
-                              <i
-                                className="fa fa-plus-square"
-                                aria-hidden="true"
-                              ></i>
-                            </button>
-                            <button
-                              style={
-                                styleBtnDel === true
-                                  ? { display: "block" }
-                                  : { display: "none" }
-                              }
-                              className="btn btn-danger"
-                              onClick={() => handleDeleteAdded(el._id)}
-                              data-bs-toggle="tooltip"
-                              data-bs-placement="right"
-                              title="Click here to delete"
-                            >
-                              <i
-                                className="fa fa-trash-o"
-                                aria-hidden="true"
-                              ></i>
-                            </button>
-                          </td>
-                          <td className="searchTd">
-                            <b>
-                              {(
-                                100 -
-                                ((el.stockPrise - el.stockNSE / el.stockNSE) /
-                                  el.stockPrise) *
-                                  100
-                              ).toFixed(2) >= 1 ? (
-                                <b className="text-info">{el.stockPrise}</b>
-                              ) : (
-                                <b className="text-danger">{el.stockPrise}</b>
-                              )}
-                            </b>
-                            <span>
-                              {(
-                                100 -
-                                ((el.stockPrise - el.stockNSE / el.stockNSE) /
-                                  el.stockPrise) *
-                                  100
-                              ).toFixed(2) >= 1 ? (
-                                <>
-                                  <i
-                                    className="fa fa-caret-up me-1 text-info"
-                                    aria-hidden="true"
-                                  ></i>
-                                  {(
-                                    100 -
-                                    ((el.stockPrise -
-                                      el.stockNSE / el.stockNSE) /
-                                      el.stockPrise) *
-                                      100
-                                  ).toFixed(2)}
-                                </>
-                              ) : (
-                                <>
-                                  <i
-                                    className="fa fa-caret-down me-1 text-danger"
-                                    aria-hidden="true"
-                                  ></i>{" "}
-                                  -
-                                  {(
-                                    100 -
-                                    ((el.stockPrise -
-                                      el.stockNSE / el.stockNSE) /
-                                      el.stockPrise) *
-                                      100
-                                  ).toFixed(2)}
-                                </>
-                              )}
-                              %
-                            </span>
-                          </td>
-                        </tr>
+                        <OneSearchItem
+                          el={el}
+                          fetchData={fetchData}
+                          taskData={taskData}
+                        />
                       ))
                     : ""}
                 </tbody>
@@ -304,106 +147,7 @@ const SearchBar = () => {
           <table className="table table-hover fs-5">
             <tbody>
               {taskData.map((el) => {
-                return (
-                  <tr
-                    key={el._id}
-                    className="searchSpace"
-                    onMouseEnter={(e) => {
-                      setStyleBtn(true);
-                    }}
-                    onMouseLeave={(e) => {
-                      setStyleBtn(false);
-                    }}
-                  >
-                    <td className="searchTd">
-                      <b>
-                        {(
-                          100 -
-                          ((el.stockPrise - el.stockNSE / el.stockNSE) /
-                            el.stockPrise) *
-                            100
-                        ).toFixed(2) >= 1 ? (
-                          <b className="text-info">
-                            {" "}
-                            {el.stockName.split("::")[0]}
-                          </b>
-                        ) : (
-                          <b className="text-danger">
-                            {" "}
-                            {el.stockName.split("::")[0]}
-                          </b>
-                        )}
-                      </b>
-                      <span>{el.stockName.split("::")[1]}</span>
-                    </td>
-                    <td>
-                      <button
-                        style={
-                          styleBtn === true
-                            ? { display: "block" }
-                            : { display: "none" }
-                        }
-                        className="btn btn-danger mt-2"
-                        onClick={() => handleDelete(el._id)}
-                        data-bs-toggle="tooltip"
-                        data-bs-placement="right"
-                        title="Click here to delete"
-                      >
-                        <i className="fa fa-trash-o" aria-hidden="true"></i>
-                      </button>
-                    </td>
-                    <td className="searchTd">
-                      <b>
-                        {(
-                          100 -
-                          ((el.stockPrise - el.stockNSE / el.stockNSE) /
-                            el.stockPrise) *
-                            100
-                        ).toFixed(2) >= 1 ? (
-                          <b className="text-info">{el.stockPrise}</b>
-                        ) : (
-                          <b className="text-danger">{el.stockPrise}</b>
-                        )}
-                      </b>
-                      <span>
-                        {(
-                          100 -
-                          ((el.stockPrise - el.stockNSE / el.stockNSE) /
-                            el.stockPrise) *
-                            100
-                        ).toFixed(2) >= 1 ? (
-                          <>
-                            <i
-                              className="fa fa-caret-up me-1 text-info"
-                              aria-hidden="true"
-                            ></i>
-                            {(
-                              100 -
-                              ((el.stockPrise - el.stockNSE / el.stockNSE) /
-                                el.stockPrise) *
-                                100
-                            ).toFixed(2)}
-                          </>
-                        ) : (
-                          <>
-                            <i
-                              className="fa fa-caret-down me-1 text-danger"
-                              aria-hidden="true"
-                            ></i>{" "}
-                            -
-                            {(
-                              100 -
-                              ((el.stockPrise - el.stockNSE / el.stockNSE) /
-                                el.stockPrise) *
-                                100
-                            ).toFixed(2)}
-                          </>
-                        )}
-                        %
-                      </span>
-                    </td>
-                  </tr>
-                );
+                return <WatchList el={el} fetchData={fetchData} />;
               })}
             </tbody>
           </table>
