@@ -106,3 +106,12 @@ body {
   padding: 3%;
   box-shadow: -2px 2px 20px 5px rgba(32, 33, 36, 0.28);
 }
+
+.navBarMy{
+  box-shadow: -2px 2px 20px 5px rgba(32, 33, 36, 0.28);
+}
+
+.allSortBtn{
+  display: flex;
+  justify-content: space-between;
+}

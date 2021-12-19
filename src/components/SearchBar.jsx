@@ -239,6 +239,28 @@ const SearchBar = () => {
               <u>All Stocks</u>
             </b>
           </p>
+          <div className="allSortBtn mb-5">
+            <div>
+              <button className="btn btn-outline-info me-2">
+                Prise <i className="fa fa-arrow-up ms-2" aria-hidden="true"></i>
+              </button>
+              <button className="btn btn-outline-danger me-2">
+                Prise <i className="fa fa-arrow-down ms-2" aria-hidden="true"></i>
+              </button>
+            </div>
+            <h3 className="">
+              <i className="fa fa-long-arrow-left me-3" aria-hidden="true"></i>SORT
+              <i className="fa fa-long-arrow-right ms-3" aria-hidden="true"></i>
+            </h3>
+            <div>
+              <button className="btn btn-outline-info me-2">
+                NSE <i className="fa fa-arrow-up ms-2" aria-hidden="true"></i>
+              </button>
+              <button className="btn btn-outline-danger me-2">
+                NSE <i className="fa fa-arrow-down ms-2" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
           <table className="table table-hover fs-5">
             <tbody>
               {taskData.map((el) => {
