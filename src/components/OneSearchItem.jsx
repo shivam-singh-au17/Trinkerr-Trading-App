@@ -39,15 +39,18 @@ const OneSearchItem = (props) => {
       <tr
         key={props.el._id}
         className="searchSpace"
-        onMouseEnter={(e) => {
-          // setStyleBtn(true);
+        onMouseEnter={() => {
+          setStyleBtn(true);
           props.taskData.map((item) => {
-            return item.mainId === props.el._id
-              ? setStyleBtnDel(true) || setStyleBtn(false)
-              : setStyleBtn(true);
+            return item.mainId === props.el._id ? (
+              <>
+                {setStyleBtnDel(true)}
+                {setStyleBtn(false)}
+              </>
+            ) : null;
           });
         }}
-        onMouseLeave={(e) => {
+        onMouseLeave={() => {
           setStyleBtn(false);
           setStyleBtnDel(false);
         }}
